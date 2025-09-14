@@ -24,7 +24,7 @@ pillow
 supabase
 reportlab
 pandas
-ydata-profiling
+ydata-profiling==4.16.1
 streamlit-pandas-profiling
 
 
