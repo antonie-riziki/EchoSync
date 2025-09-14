@@ -96,10 +96,10 @@ if add_new_task_btn:
         conn = sqlite3.connect("tasks.db")
         cursor = conn.cursor()
         cursor.execute("""
-            INSERT INTO tasks (task_id, project_name, task_title, description, milestone, priority, collaborators, start_time, deadline, reminder, status, notes)
+            INSERT INTO tasks (project_name, task_title, description, milestone, priority, collaborators, start_time, deadline, reminder, status, notes)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            task_id,
+            
             project_name,
             task_title,
             description,
