@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import sqlite3
 import pandas as pd
-import pandas_profiling
+import ydata_profiling
 
 from streamlit_pandas_profiling import st_profile_report
 
