@@ -2,6 +2,9 @@ import streamlit as st
 import os
 import sqlite3
 import pandas as pd
+import pandas_profiling
+
+from streamlit_pandas_profiling import st_profile_report
 
 from datetime import datetime
 from dotenv import load_dotenv
@@ -59,13 +62,6 @@ def fetch_tasks():
         ]
     )
     return df
-
-# Show current tasks at the top
-st.subheader("📋 All Tasks")
-task_df = fetch_tasks()
-st.dataframe(task_df, use_container_width=True)
-
-
 
 
 
@@ -147,3 +143,17 @@ if add_new_task_btn:
         st.toast(f"✅ Task '{task_title}' saved successfully!")
     except Exception as e:
         st.error(f"❌ Failed to save task: {e}")
+
+
+
+# Show current tasks at the top
+st.subheader("📋 All Tasks")
+task_df = fetch_tasks()
+st.dataframe(task_df, use_container_width=True)
+
+
+pr = df.profile_report()
+
+st_profile_report(pr)
+
+# col1, col2
