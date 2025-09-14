@@ -45,7 +45,7 @@ with st.form("task_form"):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        task_id = st.text_input("Task ID")
+        # task_id = st.text_input("Task ID")
         project_name = st.text_input("Project Name")
         task_title = st.text_input("Task Title")
         milestone = st.text_input("Milestone")
