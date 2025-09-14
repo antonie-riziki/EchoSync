@@ -1,6 +1,7 @@
 import streamlit as st 
 import os
 import sqlite3
+import pandas as pd
 
 from datetime import datetime
 from dotenv import load_dotenv

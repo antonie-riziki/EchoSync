@@ -23,5 +23,6 @@ st-social-media-links
 pillow
 supabase
 reportlab
+pandas
 
 
