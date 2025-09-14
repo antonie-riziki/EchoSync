@@ -54,8 +54,8 @@ def fetch_tasks():
         rows,
         columns=[
             "ID", "Task ID", "Project Name", "Task Title", "Description",
-            "Milestone", "Priority", "Start Time", "Deadline",
-            "Reminder (min)", "Status", "Collaborators", "Notes"
+            "Milestone", "Priority", "Collaborators", "Start Time", "Deadline",
+            "Reminder (min)", "Status", "Notes"
         ]
     )
     return df
