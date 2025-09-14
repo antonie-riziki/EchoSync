@@ -3,11 +3,6 @@ import os
 import sqlite3
 import pandas as pd
 
-
-# from ydata_profiling import ProfileReport
-
-# from streamlit_pandas_profiling import st_profile_report
-
 from datetime import datetime
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -154,11 +149,6 @@ task_df = fetch_tasks()
 st.dataframe(task_df, use_container_width=True)
 
 
-# pr = ProfileReport(task_df, title="Profiling Report")
-
-# st_profile_report(pr)
-
-# col1, col2 = st.columns(2)
 
 
 edited_df = st.data_editor(task_df, num_rows="dynamic")
