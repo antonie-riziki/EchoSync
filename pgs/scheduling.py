@@ -2,7 +2,9 @@ import streamlit as st
 import os
 import sqlite3
 import pandas as pd
-import ydata_profiling
+
+
+from ydata_profiling import ProfileReport
 
 from streamlit_pandas_profiling import st_profile_report
 
@@ -152,7 +154,7 @@ task_df = fetch_tasks()
 st.dataframe(task_df, use_container_width=True)
 
 
-pr = df.profile_report()
+pr = ProfileReport(df, title="Profiling Report")
 
 st_profile_report(pr)
 
