@@ -106,7 +106,7 @@ if add_new_task_btn:
             description,
             milestone,
             priority,
-            collaborators
+            collaborators,
             str(start_time),
             str(deadline),
             reminder,
