@@ -22,8 +22,7 @@ cursor = conn.cursor()
 # Create table (only run once)
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS tasks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        task_id TEXT,
+        task_id INTEGER PRIMARY KEY AUTOINCREMENT,
         project_name TEXT,
         task_title TEXT,
         description TEXT,
