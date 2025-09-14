@@ -41,6 +41,35 @@ conn.commit()
 conn.close()
 
 
+# Function to fetch tasks (latest first)
+def fetch_tasks():
+    conn = sqlite3.connect("tasks.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM tasks ORDER BY id DESC")  # newest first
+    rows = cursor.fetchall()
+    conn.close()
+    # Convert to dataframe
+    df = pd.DataFrame(
+        rows,
+        columns=[
+            "ID", "Task ID", "Project Name", "Task Title", "Description",
+            "Milestone", "Priority", "Start Time", "Deadline",
+            "Reminder (min)", "Status", "Collaborators", "Notes"
+        ]
+    )
+    return df
+
+# Show current tasks at the top
+st.subheader("📋 All Tasks")
+task_df = fetch_tasks()
+st.dataframe(task_df, use_container_width=True)
+
+
+
+
+
+
+
 with st.form("task_form"):
     col1, col2, col3 = st.columns(3)
 
@@ -114,6 +143,6 @@ if add_new_task_btn:
         ))
         conn.commit()
         conn.close()
-        st.success(f"✅ Task '{task_title}' saved successfully!")
+        st.toast(f"✅ Task '{task_title}' saved successfully!")
     except Exception as e:
         st.error(f"❌ Failed to save task: {e}")
