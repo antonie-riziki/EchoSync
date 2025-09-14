@@ -15,7 +15,7 @@ supabase: Client = create_client(url, key)
 
 
 # Connect (creates file if it doesn't exist)
-conn = sqlite3.connect("new_tasks.db")
+conn = sqlite3.connect("tasks.db")
 cursor = conn.cursor()
 
 
